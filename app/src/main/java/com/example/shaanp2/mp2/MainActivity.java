@@ -107,8 +107,19 @@ public class MainActivity extends AppCompatActivity
         }
 
         int calculate_steps(){
-           float[] clean = low_pass(accDataZ, 100);
+           ArrayList<Float> clean = low_pass(accDataZ, 100);
            return numPeaks;
+        }
+
+       ArrayList<Float> low_pass(ArrayList<Float> accDataZ, int smooth){
+            float acc = accDataZ.get(0);
+            int len = accDataZ.size();
+            for(int i=0; i<len; ++i){
+                float curr = accDataZ.get(i);
+                acc += (curr - acc) / smooth;
+                accDataZ.set(i, acc);
+            }
+            return accDataZ;
         }
 
 
