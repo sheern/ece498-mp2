@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MP2</string>
+
+    <string name="steps">Step count: %1$d</string>
+    <string name="distance">Distance: %1$.2f meters</string>
+    <string name="rotation">Rotation: %1$d degrees</string>
+    <string name="reset">Reset</string>
 </resources>
